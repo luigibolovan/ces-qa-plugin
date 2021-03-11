@@ -1,2 +1,2 @@
 # ces-qa-plugin
-UPT - plugin for software quality assurance lab
+# SCC code analysis tool wrapper for DX-platform
