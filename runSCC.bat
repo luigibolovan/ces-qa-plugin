@@ -11,6 +11,7 @@ if not exist "project.properties" (
     echo Created project.properties file
     echo Please fill the file with the properties of the project you want to analyze
     copy NUL project.properties > NUL
+    pause
     exit /b 1
 )
 
@@ -29,11 +30,13 @@ if %ERRORLEVEL% EQU 0 (
 ) else (
     echo You must add the project path using the project.path property
     echo Add project.path in project.properties
+    pause
     exit /b 2
 )
 
 if not exist %projectPats% (
     echo Project path not valid
+    pause
     exit /b 3
 )
 
