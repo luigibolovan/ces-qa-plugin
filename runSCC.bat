@@ -37,9 +37,6 @@ if not exist %projectPats% (
     exit /b 3
 )
 
-rem at this point project path and project name should be stored
-rem call scc
-
 if not exist tmp (
     mkdir tmp
 )
@@ -48,6 +45,8 @@ if not exist out (
     mkdir out
 )
 
+rem at this point project path and project name should be stored
+rem call scc
 bin\win\scc.exe -f json -o tmp/%projectName%-raw.json --by-file %projectPats%
 
 rem python main.py <%projectName%_raw.json>

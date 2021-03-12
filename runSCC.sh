@@ -37,9 +37,6 @@ if [ ! -d $projectPath ]; then
     exit 3
 fi
 
-# at this point project path and project name should be stored
-# call scc
-
 if [ ! -d tmp/ ]; then
     mkdir tmp
 fi
@@ -48,6 +45,8 @@ if [ ! -d out/ ]; then
     mkdir out
 fi
 
+# at this point project path and project name should be stored
+# call scc
 ./bin/unix/scc -f json -o tmp/${projectName}-raw.json --by-file $projectPath
 
 # main.py <$projectName_raw.json>
