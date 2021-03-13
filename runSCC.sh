@@ -52,4 +52,4 @@ fi
 # main.py <$projectName_raw.json>
 # rm -rf tmp
 
-echo "Analysis finished. Check out directory for ${projectName}-.json"
+echo "Analysis finished. Check out directory for ${projectName}-results.json"
