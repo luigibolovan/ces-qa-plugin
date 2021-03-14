@@ -51,7 +51,9 @@ if not exist out (
 rem at this point project path and project name should be stored
 rem call scc
 bin\win\scc.exe -f json -o tmp/%projectName%-raw.json --by-file %projectPats% > NUL
-python src\main.py
+pushd src
+python main.py
+popd src
 rmdir /s /q tmp
 
 echo Analysis finished. Check out directory for %projectName%-results.json

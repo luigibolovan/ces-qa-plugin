@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 nameProperty="project.name"
 pathProperty="project.path"
@@ -49,7 +49,9 @@ fi
 # call scc
 ./bin/unix/scc -f json -o tmp/${projectName}-raw.json --by-file $projectPath > /dev/null
 
-python3 src/main.py
+pushd src
+python3 main.py
+popd
 rm -rf tmp
 
 echo "Analysis finished. Check out directory for ${projectName}-results.json"

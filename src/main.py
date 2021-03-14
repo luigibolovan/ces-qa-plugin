@@ -3,7 +3,7 @@ import json
 separator = "="
 project_properties = {}
 
-with open('project.properties') as f:
+with open('../project.properties') as f:
 
     for line in f:
         if separator in line:
@@ -18,7 +18,7 @@ comment_results = []
 
 project_name = project_properties.get('project.name')
 
-input_json_file = 'tmp/' + project_name + '-raw.json'
+input_json_file = '../tmp/' + project_name + '-raw.json'
 
 with open(input_json_file) as json_file:
     rawResults = json.load(json_file)
@@ -48,7 +48,7 @@ for i in range(0, len(rawResults)):
 
 dx_results = code_results + blank_results + comment_results
 
-output_json_file = 'out/' + project_name + '-results.json'
+output_json_file = '../out/' + project_name + '-results.json'
 
 with open(output_json_file, 'w') as outfile:
     json.dump(dx_results, outfile, indent=4)
