@@ -47,9 +47,9 @@ fi
 
 # at this point project path and project name should be stored
 # call scc
-./bin/unix/scc -f json -o tmp/${projectName}-raw.json --by-file $projectPath
+./bin/unix/scc -f json -o tmp/${projectName}-raw.json --by-file $projectPath > /dev/null
 
-# main.py <$projectName_raw.json>
-# rm -rf tmp
+python3 src/main.py
+rm -rf tmp
 
 echo "Analysis finished. Check out directory for ${projectName}-results.json"
