@@ -32,6 +32,7 @@ with open('../cfg/languages.cfg') as f:
             raw_accepted_languages.append(lang.lower())
 
 project_name = project_properties.get('project.name')
+project_path = project_properties.get('project.path')
 
 input_json_file = '../tmp/' + project_name + '-raw.json'
 
@@ -50,24 +51,25 @@ if len(unaccepted_langs) > 0:
 for i in range(0, len(raw_results)):
     for j in range(0, len(raw_results[i].get('Files'))):
         if raw_results[i].get('Files')[j].get('Language').lower() in lowercase_langs and raw_results[i].get('Files')[j].get('Language').lower() in raw_accepted_languages:
+            file_path = raw_results[i].get('Files')[j].get('Location').replace(project_path + '/', '')
             code_results.append({
                 'name': raw_results[i].get('Files')[j].get('Language'),
                 'category': 'Code',
-                'file': raw_results[i].get('Files')[j].get('Location'),
+                'file': file_path,
                 'value': raw_results[i].get('Files')[j].get('Code'),
             })
 
             blank_results.append({
                 'name': raw_results[i].get('Files')[j].get('Language'),
                 'category': 'Blank',
-                'file': raw_results[i].get('Files')[j].get('Location'),
+                'file': file_path,
                 'value': raw_results[i].get('Files')[j].get('Blank'),
             })
 
             comment_results.append({
                 'name': raw_results[i].get('Files')[j].get('Language'),
                 'category': 'Comment',
-                'file': raw_results[i].get('Files')[j].get('Location'),
+                'file': file_path,
                 'value': raw_results[i].get('Files')[j].get('Comment'),
             })
 
