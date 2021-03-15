@@ -57,3 +57,4 @@ popd src
 rmdir /s /q tmp
 
 echo Analysis finished. Check out directory for %projectName%-results.json
+pause
