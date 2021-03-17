@@ -88,15 +88,21 @@ def generate_new_json(output_file, results):
 get_project_properties()
 
 if 'project.name' in project_properties:
-    project_name = project_properties.get('project.name')
+    if project_properties.get('project.name') != '':
+        project_name = project_properties.get('project.name')
+    else:
+        project_name = 'unnamed'
 else:
-    project_name='unnamed'
+    project_name = 'unnamed'
 
 project_path = project_properties.get('project.path')
 
 if 'project.lang' in project_properties:
-    project_lang = project_properties.get('project.lang')
-    langs = project_lang.split(lang_separator)
+    if project_properties.get('project.lang') != '':
+        project_lang = project_properties.get('project.lang')
+        langs = project_lang.split(lang_separator)
+    else:
+        langs = ''
 else:
     langs = ''
 

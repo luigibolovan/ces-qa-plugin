@@ -28,12 +28,20 @@ fi
 grep $nameProperty cfg/project.properties > /dev/null
 if [ $? -eq 0 ]; then
     projectName=`grep -o "$nameProperty.*" cfg/project.properties | cut -f 2- -d= | cut -d ' ' -f 2`
+    if [ "$projectName" = "" ]; then
+        projectName="unnamed"
+    fi
 fi
 
 # search for project.path property
 grep $pathProperty cfg/project.properties > /dev/null
 if [ $? -eq 0 ]; then
     projectPath=`grep -o "$pathProperty.*" cfg/project.properties | cut -f 2- -d= | cut -d ' ' -f 2`
+    if [ "$projectPath" = "" ]; then
+        echo "You must add the project path using the project.path property"
+        echo "Add project.path in project.properties"
+        exit 2
+    fi
 else
     echo "You must add the project path using the project.path property"
     echo "Add project.path in project.properties"
@@ -60,6 +68,6 @@ fi
 pushd src > /dev/null
 python3 main.py
 popd > /dev/null
-rm -rf tmp
+# rm -rf tmp
 
 echo "Analysis finished. Check out directory for ${projectName}-results.json"
