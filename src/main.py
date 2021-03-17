@@ -13,7 +13,7 @@ unaccepted_langs = []
 
 
 def get_project_properties():
-    with open('../project.properties') as f:
+    with open('../cfg/project.properties') as f:
         for line in f:
             if properties_separator in line:
                 name, value = line.split(properties_separator, 1)
@@ -26,7 +26,7 @@ def lowercase_langs_letters(lang_list):
 
 
 def get_accepted_langs():
-    with open('../cfg/languages.cfg') as f:
+    with open('../data/languages.data') as f:
         for line in f:
             if accepted_langs_separator in line:
                 lang, ext = line.split(accepted_langs_separator, 1)

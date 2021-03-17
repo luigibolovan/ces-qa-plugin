@@ -6,11 +6,19 @@ set languagesProperty=project.lang
 
 set projectName=unnamed
 
-if not exist "project.properties" (
+if not exist cfg (
+    echo No cfg directory found
+    echo Created cfg directory
+    mkdir cfg
+)
+
+if not exist cfg\project.properties (
     echo No project.properties file found
     echo Created project.properties file
     echo Please fill the file with the properties of the project you want to analyze
+    pushd cfg
     copy NUL project.properties > NUL
+    popd
     pause
     exit /b 1
 )
@@ -18,15 +26,15 @@ if not exist "project.properties" (
 rem at this point the project.properties file should exist
 
 rem search for project.name property
-findstr "project.name=" project.properties > NUL
+findstr "project.name=" cfg\project.properties > NUL
 if %ERRORLEVEL% EQU 0 (
-    for /F "tokens=2 delims==" %%a in ('findstr /I "project.name=" project.properties') do set "projectName=%%a"  
+    for /F "tokens=2 delims==" %%a in ('findstr /I "project.name=" cfg\project.properties') do set "projectName=%%a"  
 )
 
 rem search for project.path property
-findstr "project.path=" project.properties > NUL
+findstr "project.path=" cfg\project.properties > NUL
 if %ERRORLEVEL% EQU 0 (
-    for /F "tokens=2 delims==" %%a in ('findstr /I "project.path=" project.properties') do set "projectPats=%%a"  
+    for /F "tokens=2 delims==" %%a in ('findstr /I "project.path=" cfg\project.properties') do set "projectPats=%%a"  
 ) else (
     echo You must add the project path using the project.path property
     echo Add project.path in project.properties
