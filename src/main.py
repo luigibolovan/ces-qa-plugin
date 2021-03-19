@@ -59,22 +59,22 @@ def modify_json_format():
                 else:
                     file_path = raw_results[i].get('Files')[j].get('Location')
                 code_results.append({
-                    'name': raw_results[i].get('Files')[j].get('Language'),
-                    'category': 'Code',
+                    'name': 'Code',
+                    'category': 'SCC',
                     'file': file_path,
                     'value': raw_results[i].get('Files')[j].get('Code'),
                 })
 
                 blank_results.append({
-                    'name': raw_results[i].get('Files')[j].get('Language'),
-                    'category': 'Blank',
+                    'name': 'Blank',
+                    'category': 'SCC',
                     'file': file_path,
                     'value': raw_results[i].get('Files')[j].get('Blank'),
                 })
 
                 comment_results.append({
-                    'name': raw_results[i].get('Files')[j].get('Language'),
-                    'category': 'Comment',
+                    'name': 'Comment',
+                    'category': 'SCC',
                     'file': file_path,
                     'value': raw_results[i].get('Files')[j].get('Comment'),
                 })
