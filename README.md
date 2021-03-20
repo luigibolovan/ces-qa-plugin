@@ -19,7 +19,7 @@ git clone https://github.com/luigibolovan/ces-qa-plugin.git
 git clone git@github.com:luigibolovan/ces-qa-plugin.git
 ```
 
-and is also available on Dockerhub using
+and is also available on Dockerhub
 
 ```
 docker pull luigibolovan/scc-wrapper:1.0
