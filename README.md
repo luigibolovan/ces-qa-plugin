@@ -95,7 +95,6 @@ The output json file will have the following format:
 ## Integration with DX-Platform
 The output file will be uploaded as a properties file for the analyzed project in DX-Platform.
 
-## Results
 After uploading the properties file, the results will appear on the project's system map.
 
 Example for Apache Kafka analysis:
