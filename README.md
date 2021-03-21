@@ -22,7 +22,7 @@ git clone git@github.com:luigibolovan/ces-qa-plugin.git
 and is also available on Dockerhub
 
 ```
-docker pull luigibolovan/scc-wrapper:1.0
+docker pull luigibolovan/scc-wrapper:1.0.1
 ```
 
 ## Getting started
@@ -99,4 +99,4 @@ The output file will be uploaded as a properties file for the analyzed project i
 After uploading the properties file, the results will appear on the project's system map.
 
 Example for google/guava analysis:
-![guava-example](demo/dx_platform_results.png)
+![kafka-example](demo/demo-scc-wrapper-6.png)

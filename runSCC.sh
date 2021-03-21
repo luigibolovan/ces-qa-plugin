@@ -68,6 +68,6 @@ fi
 pushd src > /dev/null
 python3 main.py
 popd > /dev/null
-# rm -rf tmp
+rm -rf tmp
 
 echo "Analysis finished. Check out directory for ${projectName}-results.json"
