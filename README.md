@@ -98,5 +98,5 @@ The output file will be uploaded as a properties file for the analyzed project i
 ## Results
 After uploading the properties file, the results will appear on the project's system map.
 
-Example for google/guava analysis:
-![kafka-example](demo/demo-scc-wrapper-6.mp4)
+Example for Apache Kafka analysis:
+![kafka-example](demo/demo-scc-wrapper-6.gif)
