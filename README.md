@@ -67,7 +67,7 @@ The scripts will generate a json file in the ```out``` directory based on the pr
 docker run -v ${path to directory containing project.properties file}:/sccwrapper/cfg
            -v ${path to directory where the output will be generated}:/sccwrapper/out
            -v ${project.path value}:${project.path value}
-           scc-wrapper
+           luigibolovan/scc-wrapper
 ```
 
 ## Output file format
