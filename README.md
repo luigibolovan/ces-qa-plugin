@@ -99,3 +99,6 @@ After uploading the properties file, the results will appear on the project's sy
 
 Example for Apache Kafka analysis:
 ![kafka-example](demo/demo-scc-wrapper-6.gif)
+
+## Acknowledgements
+This plugin relies on the [SCC static analysis](https://github.com/boyter/scc) concepts. Its binaries are included in the ```bin``` folder of the project. 
